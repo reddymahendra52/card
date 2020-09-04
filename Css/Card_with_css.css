@@ -1,0 +1,66 @@
+body{
+  background-color: beige;
+}
+
+p{
+  font-size: 30px;
+}
+h1{
+  font-size: 45px;
+  text-decoration: underline;
+}
+.card{
+  background-color: transparent;
+  width: 800px;
+  height: 500px;
+  perspective: 1000px;
+  margin: 75px auto;
+  box-shadow: 5px 10px gray;
+  background-size: 100%;
+}
+.card_inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card:hover .card_inner{
+  transform: rotateY(180deg);
+}
+.card_front,.card_back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card_front{
+  background-color: black;
+  color: white;
+}
+.card_back{
+  background-color: #3a3a3a;
+  color: white;
+  transform: rotateY(180deg);
+}
+.card:hover .typewriter p{
+  letter-spacing: .15em;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid orange;
+  animation: typing 10s steps(50, end);
+             
+}
+@keyframes typing {
+  from{width: 0}
+  to{width: 100%}
+}
+@keyframes cursor-blinking {
+  from, to{border-color: transparent}
+  50%{border-color: orange;}
+}
+#name{
+  text-align: right;
+}
